@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using User.Api.Models;
+using User.Api.Repository;
 
 namespace User.Api
 {
@@ -16,7 +17,7 @@ namespace User.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.AddTransient<IUserRepository, UserRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
