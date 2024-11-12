@@ -1,0 +1,12 @@
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\bin\Debug\net8.0\ClassLibrary.deps.json
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\bin\Debug\net8.0\ClassLibrary.dll
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\bin\Debug\net8.0\ClassLibrary.pdb
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ClassLibrary.AssemblyInfoInputs.cache
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ClassLibrary.AssemblyInfo.cs
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ClassLibrary.sourcelink.json
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ClassLibrary.dll
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\refint\ClassLibrary.dll
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ClassLibrary.pdb
+D:\capstrone\NearYou\NearYou\services\ClassLibrary\obj\Debug\net8.0\ref\ClassLibrary.dll
