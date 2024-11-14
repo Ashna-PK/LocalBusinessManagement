@@ -9,7 +9,9 @@ namespace Seller.Api.Data
         {
         }
        public DbSet<SellerClass> sellers {  get; set; }
-       public DbSet<Shop> shops { get; set; }   
+       public DbSet<Shop> shops { get; set; }  
+       public DbSet<Product> products { get; set; }
+        public DbSet<Review> reviews { get; set; }
 
     }
 }

@@ -2,6 +2,7 @@
 using NuGet.Protocol.Plugins;
 using Seller.Api.Data;
 using Seller.Api.Models;
+using Seller.Api.Repository.IRepository;
 
 namespace Seller.Api.Repository
 {
@@ -12,7 +13,7 @@ namespace Seller.Api.Repository
         {
             _context = context;
         }
-        public async Task<IEnumerable<Shop>> getShop()
+        public async Task<IEnumerable<Shop>> getShops()
         {
             return await _context.shops.ToListAsync();
 

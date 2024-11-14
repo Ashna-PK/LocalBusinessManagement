@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Seller.Api.Data;
 
@@ -11,9 +12,11 @@ using Seller.Api.Data;
 namespace Seller.Api.Migrations
 {
     [DbContext(typeof(SellerDbContext))]
-    partial class SellerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241112165921_review")]
+    partial class review
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

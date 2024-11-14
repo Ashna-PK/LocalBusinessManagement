@@ -12,8 +12,8 @@ using Seller.Api.Data;
 namespace Seller.Api.Migrations
 {
     [DbContext(typeof(SellerDbContext))]
-    [Migration("20241111084059_second")]
-    partial class second
+    [Migration("20241112102318_shop")]
+    partial class shop
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,6 +73,42 @@ namespace Seller.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("sellers");
+                });
+
+            modelBuilder.Entity("Seller.Api.Models.Shop", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SellerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("closeTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("isOpen")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("openTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("rating")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("shops");
                 });
 #pragma warning restore 612, 618
         }

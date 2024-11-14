@@ -9,6 +9,7 @@ namespace Seller.Api.Data
         public bool isOpen { get; set; }
         public DateTime openTime { get; set; }
         public DateTime closeTime { get; set; }
+        public decimal rating { get; set; }
         
     }
 }

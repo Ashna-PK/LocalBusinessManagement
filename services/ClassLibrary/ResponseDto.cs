@@ -2,8 +2,9 @@
 {
     public class ResponseDto
     {
-        public string Result {  get; set; }
-        public bool IsSucceeded { get; set; }
-        public string  
+        public object Result { get; set; } = null!;
+        public bool IsSucceeded { get; set; }=false;
+        public string message {  get; set; }=string.Empty;
+        
     }
 }

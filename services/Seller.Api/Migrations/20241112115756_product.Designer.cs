@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Seller.Api.Data;
 
@@ -11,9 +12,11 @@ using Seller.Api.Data;
 namespace Seller.Api.Migrations
 {
     [DbContext(typeof(SellerDbContext))]
-    partial class SellerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241112115756_product")]
+    partial class product
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,60 +44,15 @@ namespace Seller.Api.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("count")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("cumulativeSum")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<int>("quantity")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("rating")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("shopId")
+                    b.Property<int>("sellerId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("products");
-                });
-
-            modelBuilder.Entity("Seller.Api.Models.Review", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("bookingId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("dateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("productId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("shopName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("userName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("userRating")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("reviews");
                 });
 
             modelBuilder.Entity("Seller.Api.Models.SellerClass", b =>
