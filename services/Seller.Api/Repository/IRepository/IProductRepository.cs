@@ -10,6 +10,6 @@ namespace Seller.Api.Repository.IRepository
         public Task<bool> deleteProduct(int id);
         public Task<Product> editProduct(int id, ProductDto product);
         public Task<Product> getProductById(int SellerId);
-        public Task<Product> updateQuantity(HttpContent con);
+        public Task<Product> updateQuantity(int id,int quantity);
     }
 }

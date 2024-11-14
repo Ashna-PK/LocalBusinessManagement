@@ -51,8 +51,8 @@ namespace Booking.Api.Repository
                     {
                         Console.WriteLine("Fetched product details for product ID: " + product.Id);
                         int stockQuantity = product.quantity;                 
-                        double price = (double)product.Price;
-                        string productName = product.Name;
+                        double price = (double)item.price;
+                        string productName = item.productName;
                         int vendorId = product.shopId;
                         if (stockQuantity < item.quantity)
                         {
@@ -62,13 +62,15 @@ namespace Booking.Api.Repository
                         // Set product details to the order item
                         var bookedItem = new BookingItem
                         {
-                            productId = product.Id,
-                            orderId= item.orderId,
-                            productName = product.Name,
-                            price = (double)product.Price,
-                            quantity = product.quantity,
-                            vendorId = product.shopId // Assuming vendorId is mapped from shopId
+                            productId = item.productId,
+                            orderId= booking.Id,
+                            productName = productName,
+                            price = price,
+                            quantity = item.quantity,
+                            vendorId = vendorId // Assuming vendorId is mapped from shopId
                         };
+                        _context.bookingsItem.Add(bookedItem);
+                        await _context.SaveChangesAsync();
                         // Save the order item
                         items.Add(bookedItem);
                         content con = new content
@@ -76,7 +78,7 @@ namespace Booking.Api.Repository
                             productid = item.productId,
                             quantity = item.quantity
                         };
-                        var putApiUrl = $"https://localhost:7162/api/Product/{product.Id}/quantity";
+                        var putApiUrl = $"https://localhost:7162/api/Product/{item.productId}/{item.quantity}";
                         var jsonContent = JsonSerializer.Serialize(con); // Or JsonConvert.SerializeObject for Newtonsoft.Json
 
                         // Wrap the JSON string in StringContent, setting the content type to application/json

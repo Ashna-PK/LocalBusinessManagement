@@ -70,11 +70,11 @@ namespace Seller.Api.Controllers
                 return NotFound("seller not found.");
             return Ok(result);
         }
-        [HttpPut("{productId}/quantity")]
-        public async Task<IActionResult> UpdateQuantity(HttpContent con) //[FromBody]
+        [HttpPut("{productId}/{quantity}")]
+        public async Task<IActionResult> UpdateQuantity(int productId, int quantity) //[FromBody]
         {
 
-            var product=await _context.updateQuantity(con);
+            var product=await _context.updateQuantity(productId,quantity);
             return Ok(product); // Optionally return the updated product
         }
     }

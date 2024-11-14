@@ -37,6 +37,7 @@ namespace Booking.Api.Repository
 
         public async Task<List<BookingItem>> getAllBookingItems()
         {
+            
             return await _context.bookingsItem.ToListAsync();
         }
 

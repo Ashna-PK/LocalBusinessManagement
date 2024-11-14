@@ -94,27 +94,27 @@ namespace Seller.Api.Repository
             return await _context.products.ToListAsync();
 
         }
-        public async Task<Product> updateQuantity(HttpContent con)
+        public async Task<Product> updateQuantity(int id,int quantity)
         {
-            var responseContent = await con.ReadAsStringAsync();
+            //var responseContent = await con.ReadAsStringAsync();
 
             // Deserialize the JSON string to an object of type `Product`
-            var product = JsonSerializer.Deserialize<content>(responseContent);
-            var product1 = await _context.products.FindAsync(product.productid);
+            //var product = JsonSerializer.Deserialize<content>(responseContent);
+            var product1 = await _context.products.FindAsync(id);
             if (product1 == null)
             {
                 return new Product();
             }
            
-            product.quantity = product.quantity;
+            product1.quantity -= quantity;
             
             await _context.SaveChangesAsync();
             return product1;
         }
     }
-    public class content
-    {
-        public int productid { get; set; }
-        public int quantity { get; set; }
-    }
+    //public class content
+    //{
+    //    public int productid { get; set; }
+    //    public int quantity { get; set; }
+    //}
 }
