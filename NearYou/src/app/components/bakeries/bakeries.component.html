@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="/">NearYou</a>
+
+    <!-- Toggle button for responsive design -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+              
+        <!-- Cart -->
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">
+            <i class="fas fa-shopping-cart"></i> Cart
+          </a>
+        </li>
+
+        <!-- Contact Us -->
+        <li class="nav-item">
+          <a class="nav-link" href="NearYou.Support@ust.com">Contact Us</a>
+        </li>
+
+        <!-- User Authentication (Login/Sign Up) -->
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container ">
+
+  <div class="row">
+
+   <!-- Iterate over products with *ngFor in Angular, but here you manually define each product for now -->
+
+   <div class="col-md-4 mb-4" *ngFor="let shop of bakeries">
+
+    <div class="card">
+
+     <img class="card-img-top" [src]="shop.imageUrl" alt="Product image" />
+
+     <div class="card-body">
+
+      <h5 class="card-title text-dark">Name:{{ shop.name }}</h5>
+
+      <p class="card-text text-muted">Rating: {{ shop.Id }} ★</p>
+
+      <p class="card-text">{{ shop.description }}</p>
+
+      <p class="card-text"> {{ shop.isOpen  }}</p>
+
+      <p class="card-text"> {{ shop.openTime|date:'shortTime'  }}</p>
+      <p class="card-text"> {{ shop.closeTime|date:'shortTime'  }}</p>
+
+     </div>
+
+     <div class="card-footer text-center">
+
+      <!-- You can replace this with your button or any action -->
+
+      <button (click)="goToProducts(shop.Id)">Explore</button>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+
+

@@ -1,0 +1,143 @@
+.container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+  padding: 2rem;
+}
+
+/* Card Base Styles */
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(23, 195, 178, 0.15);
+}
+
+/* Image Styles */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.08);
+}
+
+/* Card Body Styles */
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  color: #2d3436;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #17C3B2;
+  transition: width 0.3s ease;
+}
+
+.card:hover .card-title::after {
+  width: 100%;
+}
+
+.card-text {
+  color: #636e72;
+  margin-bottom: 0.5rem;
+}
+
+/* Rating Star Style */
+.text-muted {
+  color: #fdcb6e !important;
+  font-weight: 500;
+}
+
+/* Price and Quantity Styles */
+.card-text strong {
+  color: #2d3436;
+  font-weight: 600;
+}
+
+/* Card Footer Styles */
+.card-footer {
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+/* Button Styles */
+button {
+  padding: 0.8em 1.8em;
+  border: 2px solid #17C3B2;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  z-index: 1;
+  font-family: inherit;
+  color: #17C3B2;
+  border-radius: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+button::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #17C3B2;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(23, 195, 178, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .card-img-top {
+    height: 180px;
+  }
+}

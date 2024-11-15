@@ -1,0 +1,47 @@
+<header class="fixed-header">
+  <nav class="navbar navbar-expand-lg navbar-light px-4" style="background-color: #42476e">
+    <div class="container-fluid">
+      <!-- Left side: Logo and Project Name -->
+      <div class="d-flex align-items-center">
+        <div class="logo-text">NY</div>
+        <span class="project-name ms-2" style="color:aliceblue">NearYou</span>
+      </div>
+
+      <!-- Right side: Login and Profile Section -->
+      <div class="d-flex align-items-center ms-auto">
+        <!-- Login link -->
+        <span  class="login-link me-3" (click)="goToLogin()">Login/Register</span>
+
+        <!-- Profile dropdown -->
+        <div class="profile-section" (click)="toggleDropdown()">
+          <img 
+            [src]="'https://ui-avatars.com/api/?name=User&background=random'" 
+            alt="Profile Picture" 
+            class="profile-picture">
+          
+          <!-- Dropdown Menu -->
+          <ul class="custom-dropdown" [class.show]="dropdownOpen">
+            <li class="user-info p-3">
+              <div class="d-flex align-items-center mb-2">
+                <img 
+                  [src]="'https://ui-avatars.com/api/?name=User&background=random'" 
+                  alt="Profile Picture" 
+                  class="profile-picture-small">
+                <div class="ms-2">
+                  <h6 class="mb-0">John Doe</h6>
+                  <small class="text-muted">john.doeexample.com</small>
+                </div>
+              </div>
+              <hr>
+            </li>
+            <li><a class="dropdown-item" (click)="goToProfile()">My Profile</a></li>
+            <li><a class="dropdown-item" href="#">Your orders</a></li>
+            <!-- <li><a class="dropdown-item" href="#">Help</a></li> -->
+            <!-- <li><hr class="dropdown-divider"></li> -->
+            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
