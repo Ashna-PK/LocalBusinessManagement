@@ -17,6 +17,9 @@ export class DashboardComponent {
   goToLogin() {
     this.router.navigate(['/login']);
   }
+  RegisterSeller(){
+    this.router.navigate(['/Seller_home']);
+  }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
