@@ -1,24 +1,29 @@
 <div class="container">
     <h2>Shop Registration</h2>
-    <form>
-        <input type="text" placeholder="Shop Name" required>
-        
-        <textarea placeholder="Shop Description(Mention any licence)" required></textarea>
-        
-        <input type="time" placeholder="Opening Time" required>
-        
-        <input type="time" placeholder="Closing Time" required>
-        
-        <textarea placeholder="Shop Address" required></textarea>
-        
-        <input type="email" placeholder="Email Address" required>
-        
-        <input type="tel" placeholder="Phone Number" required>
-        
-        <input type="password" placeholder="Password" required>
-        
-        <input type="password" placeholder="Confirm Password" required>
-        
-        <button type="submit"(click)="goToLogin()">Register Shop</button>
+    <form [formGroup]="shopForm" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Shop Name" formControlName="shopName" required>
+
+        <textarea placeholder="Shop Description (Mention any license)" formControlName="shopDescription" required></textarea>
+
+        <div class="Time">
+            <label for="openingTime">Opening Time:</label>
+            <input type="time" id="openingTime" formControlName="openingTime" required>
+        </div>
+        <div class="Time">
+            <label for="closingTime">Closing Time:</label>
+            <input type="time" id="closingTime" formControlName="closingTime" required>
+        </div>
+
+        <textarea placeholder="Shop Address" formControlName="shopAddress" required></textarea>
+
+        <input type="email" placeholder="Email Address" formControlName="email" required>
+
+        <input type="tel" placeholder="Phone Number" formControlName="phoneNumber" required>
+
+        <input type="password" placeholder="Password" formControlName="password" required>
+
+        <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" required>
+
+        <button type="submit" (click)="goToLogin()">Register Shop</button>
     </form>
 </div>

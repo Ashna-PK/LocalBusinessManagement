@@ -1,0 +1,83 @@
+/* Remove table borders */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  /* Row Hover Effect */
+  .table-row {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .table-row:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Time column styling */
+  .time-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .time-item {
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .time-column:hover .time-item {
+    color: #007bff;
+  }
+  
+  /* Buttons styling */
+  .btn {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  .btn-verify {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-verify:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  /* Table Heading Styling */
+  thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Cell Padding */
+  td {
+    padding: 12px;
+    text-align: center;
+  }
+  

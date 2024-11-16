@@ -128,3 +128,28 @@
                 margin-bottom: 0.8rem;
             }
         }
+        .Time {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .Time label {
+            flex-shrink: 0;
+            /* width: 120px;  */
+            font-size: 0.9rem;
+            color: #2c3e50;
+            text-align: right; /* Align text to the right */
+        }
+        
+        .Time input[type="time"] {
+            flex: 1;
+            padding: 0.6rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+        

@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Admin Home</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Address</th>
+          <th>Created At</th>
+          <th>Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records; let i = index" class="table-row">
+          <td>{{ record.name }}</td>
+          <td>{{ record.description }}</td>
+          <td>{{ record.address }}</td>
+          <td>{{ record.createdAt }}</td>
+          <td>
+            <div class="time-column">
+              <span class="time-item">{{ record.openTime }}</span> - 
+              <span class="time-item">{{ record.closeTime }}</span>
+            </div>
+          </td>
+          <td>
+            <!-- Verify button -->
+            <button class="btn btn-verify" (click)="verifyRecord(i)">Verify</button>
+            <!-- Delete button -->
+            <button class="btn btn-delete" (click)="deleteRecord(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

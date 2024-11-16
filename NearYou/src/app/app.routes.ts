@@ -7,7 +7,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { SellerRegisterComponent } from './components/seller-register/seller-register.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { SellerHomeComponent } from './components/seller-home/seller-home.component';
-import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdminhomeComponent } from './components/adminhome/adminhome.component';
 
 
 export const routes: Routes = [
@@ -20,8 +20,7 @@ export const routes: Routes = [
 {path:'Seller_Register', component: SellerRegisterComponent},
 {path:'User_Register', component: UserRegisterComponent},
 {path:'Seller_home',component: SellerHomeComponent},
-{path:'admin_home',component: AdminHomeComponent},
-
+{path:'admin_home', component: AdminhomeComponent}
 
 
 ];
