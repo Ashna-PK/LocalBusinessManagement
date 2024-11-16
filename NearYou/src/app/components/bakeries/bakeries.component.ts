@@ -23,7 +23,7 @@ export class BakeriesComponent implements OnInit{
    constructor(private router: Router) {}
 
    goToProducts(shopId: number) {
-    this.router.navigate(['/product_list/:'+shopId]);
+    this.router.navigate(['/product_list', shopId]);
   }
   
   

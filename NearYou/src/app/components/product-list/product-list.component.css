@@ -1,143 +1,98 @@
+/* Container Styling */
 .container {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 2rem;
+  border-radius: 10px;
 }
 
-/* Card Base Styles */
+/* Card Styling */
 .card {
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
-  background: white;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 320px;
-  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 20px rgba(23, 195, 178, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Styles */
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.card:hover .card-img-top {
-  transform: scale(1.08);
-}
-
-/* Card Body Styles */
-.card-body {
-  padding: 1.25rem;
-}
-
-.card-title {
-  color: #2d3436;
-  font-weight: 600;
+/* Quantity Control Styling */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
 }
 
-.card-title::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #17C3B2;
-  transition: width 0.3s ease;
-}
-
-.card:hover .card-title::after {
-  width: 100%;
-}
-
-.card-text {
-  color: #636e72;
-  margin-bottom: 0.5rem;
-}
-
-/* Rating Star Style */
-.text-muted {
-  color: #fdcb6e !important;
-  font-weight: 500;
-}
-
-/* Price and Quantity Styles */
-.card-text strong {
-  color: #2d3436;
-  font-weight: 600;
-}
-
-/* Card Footer Styles */
-.card-footer {
-  background: transparent;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 1rem;
-}
-
-/* Button Styles */
-button {
-  padding: 0.8em 1.8em;
-  border: 2px solid #17C3B2;
+.quantity-btn {
+  background-color: #17c3b2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  background-color: transparent;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 14px;
   transition: all 0.3s ease;
-  z-index: 1;
-  font-family: inherit;
-  color: #17C3B2;
-  border-radius: 15px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  cursor: pointer;
 }
 
-button::before {
+.quantity-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background-color: #14a094;
+  transform: scale(1.1);
+}
+
+.quantity-btn::before {
   content: '';
+  position: absolute;
   width: 0;
   height: 300%;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: #17C3B2;
-  transition: 0.5s ease;
-  display: block;
-  z-index: -1;
+  background: rgba(255, 255, 255, 0.15);
+  transition: width 0.5s ease;
 }
 
-button:hover::before {
+.quantity-btn:hover::before {
   width: 105%;
 }
 
-button:hover {
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(23, 195, 178, 0.3);
+.quantity-value {
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  font-weight: bold;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .card {
-    margin-bottom: 1.5rem;
-  }
-  
-  .container {
-    padding: 1rem;
-  }
-  
-  .card-img-top {
-    height: 180px;
-  }
+/* Book Button Styling */
+.book-btn {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-btn:hover {
+  background-color: #e05850;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 111, 97, 0.3);
 }
