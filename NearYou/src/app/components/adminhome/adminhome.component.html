@@ -1,3 +1,53 @@
+<header class="fixed-header">
+    <nav class="navbar navbar-expand-lg navbar-light px-4" style="background-color: #42476e">
+      <div class="container-fluid">
+        <!-- Left side: Logo and Project Name -->
+        <div class="d-flex align-items-center">
+          <div class="logo-text">NY</div>
+          <span class="project-name ms-2" style="color:aliceblue">NearYou</span>
+        </div>
+  
+        <!-- Right side: Login and Profile Section -->
+        <div class="d-flex align-items-center ms-auto">
+    
+  <span  class="user_data"(click)="goToUsers()">Users Details</span>
+          <!-- Profile dropdown -->
+          <div class="profile-section" (click)="toggleDropdown()">
+            <img 
+              [src]="'https://ui-avatars.com/api/?name=User&background=random'" 
+              alt="Profile Picture" 
+              class="profile-picture">
+            
+            <!-- Dropdown Menu -->
+            <ul class="custom-dropdown" [class.show]="dropdownOpen">
+              <li class="user-info p-3">
+                <div class="d-flex align-items-center mb-2">
+                  <img 
+                    [src]="'https://ui-avatars.com/api/?name=User&background=random'" 
+                    alt="Profile Picture" 
+                    class="profile-picture-small">
+                  <div class="ms-2">
+                    <h6 class="mb-0">John Doe</h6>
+                    <small class="text-muted">john.doeexample.com</small>
+                  </div>
+                </div>
+                <hr>
+              </li>
+              <li><a class="dropdown-item" (click)="goToProfile()">My Profile</a></li>
+           
+              <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+
+
+
+
+
 <div class="container">
     <h2>Admin Home</h2>
     <table class="table">
@@ -8,7 +58,8 @@
           <th>Address</th>
           <th>Created At</th>
           <th>Time</th>
-          <th>Actions</th>
+          <th>Rating</th>
+          <th>Actions</th> <!-- The header for the actions column -->
         </tr>
       </thead>
       <tbody>
@@ -24,11 +75,30 @@
             </div>
           </td>
           <td>
-            <!-- Verify button -->
-            <button class="btn btn-verify" (click)="verifyRecord(i)">Verify</button>
-            <!-- Delete button -->
-            <button class="btn btn-delete" (click)="deleteRecord(i)">Delete</button>
+            <!-- Rating input field if not verified -->
+            <span *ngIf="record.verified">{{ record.rating }}</span>
+            <input *ngIf="!record.verified" 
+                   type="number" 
+                   [(ngModel)]="record.rating" 
+                   min="1" 
+                   max="5" 
+                   placeholder="Rate (1-5)" 
+                   (input)="validateRating(record)" />
           </td>
+          
+          <td> <!-- Actions column -->
+            <!-- Verify button -->
+            <button 
+              class="btn btn-verify" 
+              [disabled]="record.verified"
+              (click)="verifyRecord(record)">
+              Verify
+            </button>
+            <!-- Delete button -->
+            <button class="btn btn-delete" (click)="deleteRecord(i)">
+              Delete
+            </button>
+          </td> <!-- End of Actions column -->
         </tr>
       </tbody>
     </table>

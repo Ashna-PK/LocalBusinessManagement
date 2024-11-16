@@ -8,6 +8,7 @@ import { SellerRegisterComponent } from './components/seller-register/seller-reg
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { SellerHomeComponent } from './components/seller-home/seller-home.component';
 import { AdminhomeComponent } from './components/adminhome/adminhome.component';
+import { AdminUserdetailsComponent } from './components/admin-userdetails/admin-userdetails.component';
 
 
 export const routes: Routes = [
@@ -20,7 +21,8 @@ export const routes: Routes = [
 {path:'Seller_Register', component: SellerRegisterComponent},
 {path:'User_Register', component: UserRegisterComponent},
 {path:'Seller_home',component: SellerHomeComponent},
-{path:'admin_home', component: AdminhomeComponent}
+{path:'admin_home', component: AdminhomeComponent},
+{path:'admin_user',component:AdminUserdetailsComponent}
 
 
 ];
