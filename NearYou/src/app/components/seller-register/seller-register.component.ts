@@ -33,12 +33,26 @@ export class SellerRegisterComponent {
   onSubmit(): void {
     if (this.shopForm.valid) {
       const formData = this.shopForm.value;
-      console.log('Form Submitted Successfully:', formData);
+  
+      // Ensure the time values are in HH:mm:ss format
+      const openingTime = formData.openingTime ? `${formData.openingTime}:00` : '';
+      const closingTime = formData.closingTime ? `${formData.closingTime}:00` : '';
+  
+      // Update the formData with the correctly formatted times
+      const updatedFormData = {
+        ...formData,
+        openingTime,
+        closingTime
+      };
+  
+      console.log('Form Submitted Successfully:', updatedFormData);
+      
       // Implement further logic, e.g., sending data to the server.
     } else {
       console.log('Form is invalid');
     }
   }
+  
 
   goToLogin() {
     this.router.navigate(['/login']); // Adjust the path as needed
