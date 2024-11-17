@@ -26,7 +26,10 @@ export class BakeriesComponent implements OnInit{
     this.router.navigate(['/product_list', shopId]);
   }
   
-  
+  goToOrders()
+  {
+    this.router.navigate(['/your_orders']);
+  }
    getShops(){
   
     this.http.get("https://localhost:7162/api/shop").subscribe((res:any)=>{

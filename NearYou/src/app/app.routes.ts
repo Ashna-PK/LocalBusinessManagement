@@ -9,6 +9,7 @@ import { UserRegisterComponent } from './components/user-register/user-register.
 import { SellerHomeComponent } from './components/seller-home/seller-home.component';
 import { AdminhomeComponent } from './components/adminhome/adminhome.component';
 import { AdminUserdetailsComponent } from './components/admin-userdetails/admin-userdetails.component';
+import { YourOrdersComponent } from './components/your-orders/your-orders.component';
 
 
 export const routes: Routes = [
@@ -22,7 +23,8 @@ export const routes: Routes = [
 {path:'User_Register', component: UserRegisterComponent},
 {path:'Seller_home',component: SellerHomeComponent},
 {path:'admin_home', component: AdminhomeComponent},
-{path:'admin_user',component:AdminUserdetailsComponent}
+{path:'admin_user',component:AdminUserdetailsComponent},
+{path:'your_orders',component:YourOrdersComponent}
 
 
 ];

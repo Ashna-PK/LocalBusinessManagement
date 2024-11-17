@@ -67,7 +67,7 @@ export class ProductListComponent implements OnInit {
   
       this.http.put(apiUrl, {}).subscribe({
         next: () => {
-          alert(`Your product '${product.name}' was booked successfully!`);
+          alert(`Your ${product.selectedQuantity} '${product.name}' has been Booked successfully!`);
           product.selectedQuantity = 0; // Reset selected quantity
         },
         error: (err) => {

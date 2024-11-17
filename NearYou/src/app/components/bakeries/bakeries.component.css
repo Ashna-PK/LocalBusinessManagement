@@ -165,3 +165,7 @@ button:hover {
 .col-md-4 {
   padding: 2.75rem;  /* Reduced padding */
 }
+
+.orders{
+  cursor: pointer;
+}

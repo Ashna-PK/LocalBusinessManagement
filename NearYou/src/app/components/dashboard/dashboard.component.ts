@@ -12,6 +12,7 @@ import { AuthService } from '../../Services/auth.service';
 export class DashboardComponent {
   dropdownOpen = false;
 
+  
   constructor(private router: Router, public authService: AuthService) {}
 
   goToLogin() {

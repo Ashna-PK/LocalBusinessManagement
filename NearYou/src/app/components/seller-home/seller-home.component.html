@@ -1,6 +1,7 @@
-<p>seller home works</p>
-<button class="btn-add" (click)="openAddModal()">+</button>
 
+<button class="btn-add" (click)="openAddModal()">+</button>
+<br>
+<div class="card_container">
 <div class="product-card" *ngFor="let product of products; let i = index">
   <div class="card-header">
     <h3>{{ product.name }}</h3>
@@ -15,6 +16,7 @@
     <button (click)="openUpdateModal(i)" class="btn-update">Update</button>
     <button (click)="deleteProduct(i)" class="btn-delete">Delete</button>
   </div>
+</div>
 </div>
 
 <!-- Modal for Add/Update -->
